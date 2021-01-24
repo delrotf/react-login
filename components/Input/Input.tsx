@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
-import { Field, ErrorMessage } from "formik";
-import { FormControlFeedback } from "..";
+import { Field } from "formik";
 
 const Input = props => {
   const { controlId, label, name, type, placeholder, hint, ...rest } = props;
@@ -11,20 +10,25 @@ const Input = props => {
       <Form.Label>{label}</Form.Label>
       <Field name={name}>
         {props => {
-          const { field, meta } = props;
+          const { field, form, meta } = props;
           return (
             <React.Fragment>
               <Form.Control
                 type={type}
                 placeholder={placeholder}
+                isInvalid={meta.touched && !!meta.error}
                 {...field}
               />
-              {!meta.error && <Form.Text muted>{hint}</Form.Text>}
+              {(!meta.touched || (meta.touched && !meta.error)) && (
+                <Form.Text muted>{hint}</Form.Text>
+              )}
+              <Form.Control.Feedback type="invalid">
+                {meta.error}
+              </Form.Control.Feedback>
             </React.Fragment>
           );
         }}
       </Field>
-      <ErrorMessage name={name} component={FormControlFeedback} />
     </Form.Group>
   );
 };
