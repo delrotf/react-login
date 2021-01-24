@@ -1,12 +1,10 @@
 import React from "react";
-import { LoginForm } from ".";
-import { FormikForm } from "./";
-import styles from "./LoginCard.module.scss";
+import { LoginForm } from "..";
 
 const LoginCard = () => {
   return (
     <div className="p-3">
-      <FormikForm />
+      <LoginForm />
     </div>
   );
 };
