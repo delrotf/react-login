@@ -1,10 +1,10 @@
 import React from "react";
+import { LoginCard } from "../components";
 
-const LoginPage = () => {
+const LoginPage = props => {
   return (
     <div>
-      <div>asdfd </div>
-      <div>asdfd </div>
+      <LoginCard/>
     </div>
   );
 };

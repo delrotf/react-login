@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { render } from "react-dom";
 import { LoginPage } from "./pages";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./style.css";
+import "./style.scss";
 
 interface AppProps {}
 interface AppState {
