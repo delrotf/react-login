@@ -4,7 +4,7 @@ import { LoginCard } from "../components";
 const LoginPage = props => {
   return (
     <div>
-      <LoginCard/>
+      <LoginCard {...props}/>
     </div>
   );
 };
