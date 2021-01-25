@@ -7,9 +7,7 @@ import { LoginContext, LoginContextProvider } from "../../context/login-context"
 
 const LoginForm = props => {
   const {
-    firstname: firstnameContext,
     setFirstname,
-    authenticated,
     setAuthenticated
   } = useContext(LoginContext);
 
@@ -32,6 +30,8 @@ const LoginForm = props => {
   });
 
   const onSubmit = values => {
+    setFirstname(values.firstname);
+    setAuthenticated(true);
     props.history.push('/home')
     console.log("values", values);
   };
