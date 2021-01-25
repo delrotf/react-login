@@ -30,10 +30,10 @@ const LoginForm = props => {
   });
 
   const onSubmit = values => {
+    console.log("values", values);
     setFirstname(values.firstname);
     setAuthenticated(true);
     props.history.push("/home");
-    console.log("values", values);
   };
 
   return (
