@@ -1,10 +1,10 @@
 import React from "react";
-import { LoginCard } from "../components";
+import { FormCard } from "../components";
 
 const LoginPage = props => {
   return (
     <div>
-      <LoginCard {...props}/>
+      <FormCard {...props}/>
     </div>
   );
 };

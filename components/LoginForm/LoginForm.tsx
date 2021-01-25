@@ -32,7 +32,7 @@ const LoginForm = props => {
   });
 
   const onSubmit = values => {
-    
+    props.history.push('/home')
     console.log("values", values);
   };
 
