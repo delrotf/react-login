@@ -3,13 +3,13 @@ import React, { useContext } from "react";
 import { Button, Form as BsForm } from "react-bootstrap";
 import * as Yup from "yup";
 import { Input } from "..";
-import { LoginContext, LoginContextProvider } from "../../context/login-context";
+import {
+  LoginContext,
+  LoginContextProvider
+} from "../../context/login-context";
 
 const LoginForm = props => {
-  const {
-    setFirstname,
-    setAuthenticated
-  } = useContext(LoginContext);
+  const { setFirstname, setAuthenticated } = useContext(LoginContext);
 
   const formValues = {
     firstname: "",
@@ -32,7 +32,7 @@ const LoginForm = props => {
   const onSubmit = values => {
     setFirstname(values.firstname);
     setAuthenticated(true);
-    props.history.push('/home')
+    props.history.push("/home");
     console.log("values", values);
   };
 
@@ -45,43 +45,45 @@ const LoginForm = props => {
       >
         {formik => (
           <Form>
-            <BsForm.Row>
-              <Input
-                controlId="firstname"
-                name="firstname"
-                type="text"
-                label="Firstname"
-                hint="firstname"
-                placeholder="Firstname"
-              />
-              <Input
-                controlId="lastname"
-                name="lastname"
-                type="text"
-                label="Lastname"
-                hint="Lastname"
-                placeholder="Lastname"
-              />
-            </BsForm.Row>
-            <BsForm.Row>
-              <Input
-                controlId="email"
-                name="email"
-                type="email"
-                label="Email"
-                hint="email"
-                placeholder="Email"
-              />
-              <Input
-                controlId="password"
-                name="password"
-                type="password"
-                label="Password"
-                hint="password"
-                placeholder="Password"
-              />
-            </BsForm.Row>
-            <hr/>
+            <div className="p-3">
+              <BsForm.Row>
+                <Input
+                  controlId="firstname"
+                  name="firstname"
+                  type="text"
+                  label="Firstname"
+                  hint="firstname"
+                  placeholder="Firstname"
+                />
+                <Input
+                  controlId="lastname"
+                  name="lastname"
+                  type="text"
+                  label="Lastname"
+                  hint="Lastname"
+                  placeholder="Lastname"
+                />
+              </BsForm.Row>
+              <BsForm.Row>
+                <Input
+                  controlId="email"
+                  name="email"
+                  type="email"
+                  label="Email"
+                  hint="email"
+                  placeholder="Email"
+                />
+                <Input
+                  controlId="password"
+                  name="password"
+                  type="password"
+                  label="Password"
+                  hint="password"
+                  placeholder="Password"
+                />
+              </BsForm.Row>
+            </div>
+            <hr />
             <div className="d-flex p-3">
               <Button variant="primary" className="flex-fill" type="submit">
                 Create
