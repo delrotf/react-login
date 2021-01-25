@@ -81,9 +81,12 @@ const LoginForm = props => {
                 placeholder="Password"
               />
             </BsForm.Row>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <hr/>
+            <div className="d-flex p-3">
+              <Button variant="primary" className="flex-fill" type="submit">
+                Create
+              </Button>
+            </div>
           </Form>
         )}
       </Formik>
