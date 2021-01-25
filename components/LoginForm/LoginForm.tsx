@@ -83,7 +83,7 @@ const LoginForm = props => {
             <hr />
             <div className="d-flex p-3">
               <Button variant="primary" className="flex-fill" type="submit">
-                Create
+                Submit
               </Button>
             </div>
           </Form>
